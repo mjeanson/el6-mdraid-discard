@@ -914,7 +914,7 @@ static int make_request(struct mddev *mddev, struct bio * bio)
 	const bool do_sync = bio_rw_flagged(bio, BIO_RW_SYNCIO);
 	const unsigned long do_flush_fua = (bio->bi_rw & (BIO_FLUSH | BIO_FUA));
 	const unsigned long do_discard = (bio->bi_rw
-					  & (REQ_DISCARD | REQ_SECURE));
+					  & (REQ_DISCARD));
 	struct md_rdev *blocked_rdev;
 	int first_clone;
 	int sectors_handled;

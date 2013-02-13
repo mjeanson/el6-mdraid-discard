@@ -922,7 +922,7 @@ static int make_request(struct mddev *mddev, struct bio * bio)
 	const bool do_sync = bio_rw_flagged(bio, BIO_RW_SYNCIO);
 	const unsigned long do_fua = (bio->bi_rw & BIO_FUA);
 	const unsigned long do_discard = (bio->bi_rw
-					  & (REQ_DISCARD | REQ_SECURE));
+					  & (REQ_DISCARD));
 	unsigned long flags;
 	struct md_rdev *blocked_rdev;
 	int sectors_handled;
